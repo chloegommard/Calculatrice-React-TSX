@@ -2,7 +2,7 @@
 
 describe('My First Test', () => {
   it('operations qui marchent', () => {
-    cy.visit("http://localhost:5173/calculatrice-react-tsx"); 
+    cy.visit("http://localhost:5173/calculatrice"); 
     cy.get('button[id=1]').click();
     cy.get('button[id=\'+\']').click();
     cy.get('button[id=3]').click();
@@ -17,7 +17,7 @@ describe('My First Test', () => {
 
   })
   it('operations qui marchent pas', () => {
-    cy.visit("http://localhost:5173/calculatrice-react-tsx"); 
+    cy.visit("http://localhost:5173/calculatrice"); 
     cy.get('button[id=1]').click();
     cy.get('#screen').should('have.value', '1');
 
@@ -31,7 +31,7 @@ describe('My First Test', () => {
 
   })
   it('operations avec decimales', () => {
-    cy.visit("http://localhost:5173/calculatrice-react-tsx"); 
+    cy.visit("http://localhost:5173/calculatrice"); 
     cy.get('button[id=1]').click();
     cy.get('#screen').should('have.value', '1');
 
@@ -47,7 +47,7 @@ describe('My First Test', () => {
 
   })
   it('operations soustraction', () => {
-    cy.visit("http://localhost:5173/calculatrice-react-tsx"); 
+    cy.visit("http://localhost:5173/calculatrice"); 
     cy.get('button[id=1]').click();
 
     cy.get('button[id=\'—\']').click();
