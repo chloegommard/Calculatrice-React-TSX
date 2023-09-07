@@ -17,22 +17,23 @@ const buttonValues : string[] = [
   '4',
   '5',
   '6',
-  '-',
+  '—',
   '7',
   '8',
   '9',
   '*',
   '0',
   '.',
-  '',
+  '-',
   '/',
 ]
 
 
+export type NumberOrEmptyString = number |''
 
 function App(): JSX.Element {
   // states
-  const [result, setResult] = useState<string>('')
+  const [result, setResult] = useState<NumberOrEmptyString >("")
   const [screenValue, setScreenValue] = useState<string>('')
 
   // functions
@@ -45,21 +46,23 @@ function App(): JSX.Element {
   }
 
   useEffect(() => {
-    setScreenValue(result)
+    setScreenValue(String(result))
   }, [result])
 
   return (
     <>
       <GlobalStyle />
       <ToastContainer />
-      <StyledGridContainer>
-        <StyledScreen value={screenValue} readOnly />
+      <StyledGridContainer data-testid='calculator'>
+        <StyledScreen value={screenValue} readOnly id="screen" />
         {buttonValues.map(button => (
-          <StyledButton key={button} onClick={() => display(button)}>
+          <StyledButton key={button} id={button} onClick={() => display(button)}>
             {button}
           </StyledButton>
         ))}
         <StyledButton
+          id ="equal"
+          equal
           onClick={() => {
             clear()
             solve(screenValue, setResult)
@@ -67,8 +70,11 @@ function App(): JSX.Element {
         >
           =
         </StyledButton>
-        <StyledButton onClick={clear}>C</StyledButton>
+        <StyledButton id ="clear" onClick={clear}>C</StyledButton>
       </StyledGridContainer>
+
+      
+
     </>
   )
 }

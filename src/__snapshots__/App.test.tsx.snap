@@ -1,0 +1,189 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Visual regression > calculator 1`] = `
+.c0 {
+  display: grid;
+  justify-items: stretch;
+  grid-template-columns: repeat(4, 60px [col-start]);
+  grid-template-rows: repeat(6, 60px [row-start]);
+  box-shadow: 5px 5px 5px rgb(217, 212, 212);
+}
+
+.c2 {
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: Cascadia Code;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  justify-self: stretch;
+}
+
+.c2:hover {
+  border-color: #646cff;
+}
+
+.c2:focus,
+.c2:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.c3 {
+  grid-row-start: 6;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: Cascadia Code;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  justify-self: stretch;
+}
+
+.c3:hover {
+  border-color: #646cff;
+}
+
+.c3:focus,
+.c3:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.c1 {
+  font-family: Cascadia Code;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #abddad;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  justify-self: stretch;
+}
+
+<div
+  class="c0"
+  data-testid="calculator"
+>
+  <input
+    class="c1"
+    id="screen"
+    readonly=""
+    value=""
+  />
+  <button
+    class="c2"
+    id="1"
+  >
+    1
+  </button>
+  <button
+    class="c2"
+    id="2"
+  >
+    2
+  </button>
+  <button
+    class="c2"
+    id="3"
+  >
+    3
+  </button>
+  <button
+    class="c2"
+    id="+"
+  >
+    +
+  </button>
+  <button
+    class="c2"
+    id="4"
+  >
+    4
+  </button>
+  <button
+    class="c2"
+    id="5"
+  >
+    5
+  </button>
+  <button
+    class="c2"
+    id="6"
+  >
+    6
+  </button>
+  <button
+    class="c2"
+    id="—"
+  >
+    —
+  </button>
+  <button
+    class="c2"
+    id="7"
+  >
+    7
+  </button>
+  <button
+    class="c2"
+    id="8"
+  >
+    8
+  </button>
+  <button
+    class="c2"
+    id="9"
+  >
+    9
+  </button>
+  <button
+    class="c2"
+    id="*"
+  >
+    *
+  </button>
+  <button
+    class="c2"
+    id="0"
+  >
+    0
+  </button>
+  <button
+    class="c2"
+    id="."
+  >
+    .
+  </button>
+  <button
+    class="c2"
+    id="-"
+  >
+    -
+  </button>
+  <button
+    class="c2"
+    id="/"
+  >
+    /
+  </button>
+  <button
+    class="c3"
+    id="equal"
+  >
+    =
+  </button>
+  <button
+    class="c2"
+    id="clear"
+  >
+    C
+  </button>
+</div>
+`;

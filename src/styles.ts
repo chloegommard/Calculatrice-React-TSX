@@ -18,9 +18,16 @@ export const StyledGridContainer = styled.div`
   grid-template-columns: repeat(4, 60px [col-start]);
   grid-template-rows: repeat(6, 60px [row-start]);
   box-shadow: 5px 5px 5px rgb(217, 212, 212);
+  
 `
+interface ButtonEqual {
+  equal?: boolean;
+}
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<ButtonEqual>`
+  grid-row-start: ${(props) => (props.equal ? '6' :'' )};
+  grid-column-start: ${(props) => (props.equal ? '1' :'')};
+  grid-column-end:  ${(props) => (props.equal ? '4' :'')};
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
