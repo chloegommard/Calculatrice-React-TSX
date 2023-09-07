@@ -1,6 +1,6 @@
 module.exports = {
     branches: [{ name: 'main' }],
-    url: 'https://github.com/chloegommard/calculatrice-react-tsx.git',
+    url: 'https://github.com/chloegommard/calculatrice.git',
     /* plugins: [
       '@semantic-release/commit-analyzer',
       ['@semantic-release/release-notes-generator'],
