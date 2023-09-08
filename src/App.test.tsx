@@ -2,7 +2,7 @@ import { expect, describe, it } from 'vitest'
 import {render, screen} from '@testing-library/react'
 import '@testing-library/jest-dom'
 import 'jest-styled-components'
-import App from './App.tsx'
+import App from './App'
 
 describe('Visual regression', () => {
     it('calculator', () => {
@@ -15,10 +15,10 @@ describe('Visual regression', () => {
   
       // Assert
       // Test if the snapshot is the same
-      //const button = getByText('1');
+      // const button = getByText('1');
 
       const calc = screen.getByTestId('calculator')
-      expect(calc).toMatchSnapshot();
+      expect(calc).toMatchSnapshot()
     })
     
   })

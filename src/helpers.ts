@@ -5,23 +5,20 @@ import {NumberOrEmptyString} from './App'
 
 export function somme(operand1: number, operand2: number): number {
   const result = operand1 + operand2
-  console.log(result, "result")
 
   return (result)
 }
 
 export function sub(operand1: number, operand2: number): number {
   const result = operand1 - operand2
-  console.log(result, "result")
 
   return (result)
 }
 
 export function times(operand1: number, operand2: number): number {
-  console.log(operand1, operand2)
+  
 
   const result = operand1 * operand2
-  console.log(result, "result")
   return (result)
 }
 
@@ -30,7 +27,7 @@ export function div(operand1: number, operand2: number): number {
     throw new Error('impossible de div par 0')
   } else {
     const result = operand1 / operand2
-    console.log(result, "result")
+    
 
     return (result)
   }
@@ -39,7 +36,7 @@ export function div(operand1: number, operand2: number): number {
 export function solve(
   operation: string,
   dispatchSetStateAction: React.Dispatch<React.SetStateAction<NumberOrEmptyString>>,
-) {
+) : void {
   const formulaRegex: RegExp = /^(-?\d+(\.\d+)?)\s*([+*/—])\s*(-?\d+(\.\d+)?)$/g
   const operators: RegExp = /[+—*/]/g
   const operationSchema: z.ZodString = z.string().min(3).regex(formulaRegex)
@@ -50,20 +47,19 @@ export function solve(
     if (error instanceof z.ZodError) {
       toast.error('Pas une formule arithmétique: ')
       return
-    } else {
-      console.error('Erreur inattendue :', error)
-      return
-    }
+    } 
+    toast.error('Bizarre ')
+    return
+    
   }
 
   const operandSchema = z.coerce.number()
   const parts = operation.split(operators)
-  console.log("parts",parts)
   
-  const operands: number[] = parts.map(parts =>
-    operandSchema.parse(parts.trim()),
-  ) //conversion en nombre
-  console.log("operandschema",operands)
+  const operands: number[] = parts.map(part =>
+    operandSchema.parse(part.trim()),
+  ) // conversion en nombre
+  
   const [firstOperand, secondOperand]: number[] = operands
   const matches = operation.match(operators)
 
@@ -86,7 +82,7 @@ export function solve(
       dispatchSetStateAction(div(firstOperand, secondOperand))
       break
     default:
-      console.log('Something unexpected happened')
+      window.console.log("default case")
       break
   }
 }

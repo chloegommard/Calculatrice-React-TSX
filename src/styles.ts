@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
+
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -25,9 +25,9 @@ interface ButtonEqual {
 }
 
 export const StyledButton = styled.button<ButtonEqual>`
-  grid-row-start: ${(props) => (props.equal ? '6' :'' )};
-  grid-column-start: ${(props) => (props.equal ? '1' :'')};
-  grid-column-end:  ${(props) => (props.equal ? '4' :'')};
+  grid-row-start: ${props => (props.equal ? '6' :'' )};
+  grid-column-start: ${props => (props.equal ? '1' :'')};
+  grid-column-end:  ${props => (props.equal ? '4' :'')};
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;

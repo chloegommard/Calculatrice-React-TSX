@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'vitest'
-import { somme, sub, times, div } from './helpers.ts'
+import { somme, sub, times, div } from './helpers'
 
 describe('Testing multiplication', () => {
   it('should multiply two int together', () => {

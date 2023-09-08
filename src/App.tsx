@@ -37,11 +37,11 @@ function App(): JSX.Element {
   const [screenValue, setScreenValue] = useState<string>('')
 
   // functions
-  function display(number : string) {
+  const display  = (number : string) :void => {
     setScreenValue(`${screenValue}${number}`)
   }
 
-  function clear() {
+  const clear:VoidFunction = ()=> {
     setScreenValue('')
   }
 
