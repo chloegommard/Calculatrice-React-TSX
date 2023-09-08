@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'vitest'
-import { somme, sub, times, div } from './helpers'
+import { somme, sub, times, div, modulo, power } from './helpers'
 
 describe('Testing multiplication', () => {
   it('should multiply two int together', () => {
@@ -47,5 +47,22 @@ describe('Testing division', () => {
     expect(() => div(1, 0)).toThrowError('impossible de div par 0')
   })
 })
-
-
+describe('Testing modulo', () => {
+  it('should do the modulo ', () => {
+    expect(modulo(5, 2)).toBe(1)
+  })
+  it('should be false', () => {
+    expect(modulo(4, 2)).not.toBe(1)
+  })
+  it('should throw an error', () => {
+    expect(() => modulo(1, 0)).toThrowError('impossible de div par 0')
+  })
+})
+describe('Testing power', () => {
+  it('should power to int together', () => {
+    expect(power(4, 2)).toBe(16)
+  })
+  it('should power two float together', () => {
+    expect(power(2.5, 2)).toBe(6.25)
+  })
+})

@@ -1,4 +1,4 @@
-import { ToastContainer} from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useState, useEffect } from 'react'
 import {
@@ -9,7 +9,7 @@ import {
 } from './styles'
 import { solve } from './helpers'
 
-const buttonValues : string[] = [
+const buttonValues: string[] = [
   '1',
   '2',
   '3',
@@ -26,22 +26,23 @@ const buttonValues : string[] = [
   '.',
   '-',
   '/',
+  '%',
+  '^',
 ]
 
-
-export type NumberOrEmptyString = number |''
+export type NumberOrEmptyString = number | ''
 
 function App(): JSX.Element {
   // states
-  const [result, setResult] = useState<NumberOrEmptyString >("")
+  const [result, setResult] = useState<NumberOrEmptyString>('')
   const [screenValue, setScreenValue] = useState<string>('')
 
   // functions
-  const display  = (number : string) :void => {
+  const display = (number: string): void => {
     setScreenValue(`${screenValue}${number}`)
   }
 
-  const clear:VoidFunction = ()=> {
+  const clear: VoidFunction = () => {
     setScreenValue('')
   }
 
@@ -53,16 +54,19 @@ function App(): JSX.Element {
     <>
       <GlobalStyle />
       <ToastContainer />
-      <StyledGridContainer data-testid='calculator'>
+      <StyledGridContainer data-testid="calculator">
         <StyledScreen value={screenValue} readOnly id="screen" />
         {buttonValues.map(button => (
-          <StyledButton key={button} id={button} onClick={() => display(button)}>
+          <StyledButton
+            key={button}
+            id={button}
+            onClick={() => display(button)}
+          >
             {button}
           </StyledButton>
         ))}
         <StyledButton
-          id ="equal"
-          equal
+          id="equal"
           onClick={() => {
             clear()
             solve(screenValue, setResult)
@@ -70,11 +74,10 @@ function App(): JSX.Element {
         >
           =
         </StyledButton>
-        <StyledButton id ="clear" onClick={clear}>C</StyledButton>
+        <StyledButton id="clear" onClick={clear}>
+          C
+        </StyledButton>
       </StyledGridContainer>
-
-      
-
     </>
   )
 }
